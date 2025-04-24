@@ -2,7 +2,7 @@ manifestVersion: 1
 id: sparkles-hello-world
 name: Hello World
 tagline: Replace this tagline with your app's tagline
-icon: https://svgur.com/i/mvA.svg
+icon: https://github.com/TheRealDK1337/dk1337-app-store/blob/master/dk1337-vaultwarden/vaultwarden_logo.png
 category: Development
 version: "1.0.0"
 port: 4000
