@@ -1,2 +1,2 @@
-id: "dk1337-app-store" # Choose the ID for your app store. This should contain only alphabets ("a to z") and dashes ("-").
+id: "dk1337-umbrel" # Choose the ID for your app store. This should contain only alphabets ("a to z") and dashes ("-").
 name: "DK1337" # Choose the name of your app store. It will show up in the UI as "<name> App Store".
