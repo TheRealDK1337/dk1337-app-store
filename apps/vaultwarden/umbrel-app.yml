@@ -1,0 +1,13 @@
+id: dk1337-umbrel.vaultwarden
+name: Vaultwarden
+version: "1.0.0"
+releaseNotes: "Initial Vaultwarden App für Umbrel"
+description: >
+  Vaultwarden ist eine leichtgewichtige Bitwarden-kompatible Passwort-Manager-Lösung.
+developer: Vaultwarden Community
+website: https://github.com/dani-garcia/vaultwarden
+dependencies: []
+repo: https://github.com/dani-garcia/vaultwarden
+support: https://github.com/dani-garcia/vaultwarden/issues
+port: 1337
+icon: icon.png

@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    volumes:
+      - vaultwarden-data:/data
+    environment:
+      - EMERGENCY_ACCESS_ALLOWED=true
+      - WEB_VAULT_ENABLED=true
+      - PUSH_ENABLED=true
+      - PUSH_RELAY_URI=https://push.bitwarden.eu
+      - PUSH_IDENTITY_URI=https://identity.bitwarden.eu
+    expose:
+      - "80"
+
+  app-proxy:
+    image: getumbrel/umbrel-app-proxy:1.0.5
+    restart: unless-stopped
+    environment:
+      - APP_HOST=vaultwarden
+      - APP_PORT=80
+    ports:
+      - "1337:80"
+
+volumes:
+  vaultwarden-data:
