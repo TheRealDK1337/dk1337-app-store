@@ -1,10 +1,18 @@
 version: "3.7"
 
 services:
-  vaultwarden:
+  app-proxy:
+    image: getumbrel/umbrel-app-proxy:1.0.5
+    restart: always
+    environment:
+      - APP_HOST=dk1337-umbrel-vaultwarden_server_1
+      - APP_PORT=80
+    ports:
+      - "1337:80"
+
+  server:
     image: vaultwarden/server:latest
-    container_name: vaultwarden
-    restart: unless-stopped
+    restart: always
     volumes:
       - vaultwarden-data:/data
     environment:
@@ -15,15 +23,6 @@ services:
       - PUSH_IDENTITY_URI=https://identity.bitwarden.eu
     expose:
       - "80"
-
-  app-proxy:
-    image: getumbrel/umbrel-app-proxy:1.0.5
-    restart: unless-stopped
-    environment:
-      - APP_HOST=vaultwarden
-      - APP_PORT=80
-    ports:
-      - "1337:80"
 
 volumes:
   vaultwarden-data:
