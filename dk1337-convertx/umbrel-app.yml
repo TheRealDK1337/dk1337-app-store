@@ -3,7 +3,7 @@ id: dk1337-convertx
 name: ConvertX
 tagline: A self-hosted online file converter that converts tons of file types
 icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-convertx/convertx-icon.png
-category: files & productivity
+category: Apps
 version: "0.6.0"
 port: 13000
 description: >-

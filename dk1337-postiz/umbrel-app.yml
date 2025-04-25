@@ -3,7 +3,7 @@ id: dk1337-postiz
 name: Postiz
 tagline: An intuitive tool for managing social media
 icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-postiz/postiz.png
-category: Social Media
+category: Apps
 version: "1.37.3"
 port: 5555
 description: >-
