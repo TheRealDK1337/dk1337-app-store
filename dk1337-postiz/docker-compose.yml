@@ -1,0 +1,72 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: dk1337-postiz_web_1
+      APP_PORT: 5050
+
+  web:
+    image: ghcr.io/gitroomhq/postiz-app:v1.37.3-amd64@sha256:eeb0f61ab95443597504314ec84370fd9a2d0357ee582417c23dff082a662190
+    restart: always
+    environment:
+      MAIN_URL: "http://umbrel-2.local:5555"
+      FRONTEND_URL: "http://umbrel-2.local:5555"
+      NEXT_PUBLIC_BACKEND_URL: "http://umbrel-2.local:5555/api"
+      JWT_SECRET: "1VNJhz1fj1INZubVWE0KXCN9zhCCFL5mN7blCFDCH6k="
+      DATABASE_URL: "postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local"
+      REDIS_URL: "redis://postiz-redis:6379"
+      BACKEND_INTERNAL_URL: "http://localhost:3000"
+      IS_GENERAL: "true"
+      STORAGE_PROVIDER: "local"
+      NOT_SECURED: "true"
+      UPLOAD_DIRECTORY: "/uploads"
+      NEXT_PUBLIC_UPLOAD_DIRECTORY: "/uploads"
+    volumes:
+      - ${APP_DATA_DIR}/data/env/postiz.env:/config/postiz.env
+      - ${APP_DATA_DIR}/data/postiz-config:/config
+      - ${APP_DATA_DIR}/data/postiz-uploads:/uploads
+    depends_on:
+      postiz-postgres:
+        condition: service_healthy
+      postiz-redis:
+        condition: service_healthy
+
+  postiz-postgres:
+    image: postgres:17-alpine@sha256:7062a2109c4b51f3c792c7ea01e83ed12ef9a980886e3b3d380a7d2e5f6ce3f5
+    restart: always
+    healthcheck:
+      test: pg_isready -U postiz-user -d postiz-db-local
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    environment:
+      POSTGRES_USER: postiz-user
+      POSTGRES_PASSWORD: postiz-password
+      POSTGRES_DB: postiz-db-local
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres-volume:/var/lib/postgresql/data
+
+  postiz-redis:
+    image: redis:7.4.2@sha256:bd41d55aae1ecff61b2fafd0d66761223fe94a60373eb6bb781cfbb570a84079
+    restart: always
+    healthcheck:
+      test: redis-cli ping
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    volumes:
+      - ${APP_DATA_DIR}/data/redis-volume:/data
+
+volumes:
+  postgres-volume:
+    external: false
+ 
+  postiz-redis-data:
+    external: false
+ 
+  postiz-config:
+    external: false
+ 
+  postiz-uploads:
+    external: false
