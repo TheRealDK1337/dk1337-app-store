@@ -3,7 +3,7 @@ id: dk1337-rustdesk-server
 name: RustDesk Server
 tagline: A fast and reliable solution for remote access
 icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-rustdesk-server/rustdesk-server.png
-category: networking
+category: Apps
 version: "1.1.14"
 port: 21080
 description: >-
