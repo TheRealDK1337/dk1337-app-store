@@ -2,7 +2,7 @@ manifestVersion: 1
 id: dk1337-postiz
 name: Postiz
 tagline: An intuitive tool for managing social media
-icon: postiz.png
+icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-postiz/postiz.png
 category: Social Media
 version: "1.37.3"
 port: 5555
