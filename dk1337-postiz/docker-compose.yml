@@ -10,9 +10,9 @@ services:
     image: ghcr.io/gitroomhq/postiz-app:v1.37.3-amd64@sha256:eeb0f61ab95443597504314ec84370fd9a2d0357ee582417c23dff082a662190
     restart: always
     environment:
-      MAIN_URL: "http://umbrel-2.local:5555"
-      FRONTEND_URL: "http://umbrel-2.local:5555"
-      NEXT_PUBLIC_BACKEND_URL: "http://umbrel-2.local:5555/api"
+      MAIN_URL: "http://umbrel.local:5555"
+      FRONTEND_URL: "http://umbrel.local:5555"
+      NEXT_PUBLIC_BACKEND_URL: "http://umbrel.local:5555/api"
       JWT_SECRET: "1VNJhz1fj1INZubVWE0KXCN9zhCCFL5mN7blCFDCH6k="
       DATABASE_URL: "postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local"
       REDIS_URL: "redis://postiz-redis:6379"

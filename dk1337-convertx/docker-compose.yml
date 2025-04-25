@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: dk1337-convertx_web_1
+      APP_PORT: 13300
+
+  convertx:
+    image: ghcr.io/c4illin/convertx:v0.6.0@sha256:32318b22cd6208033b54fe98fa00544a3d78bd7676a97713b799317eb646e8d3
+    container_name: convertx
+    restart: always
+    ports:
+      - "13000:3000"
+    environment:
+      - ACCOUNT_REGISTRATION=false
+      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234
+      - HTTP_ALLOWED=true
+      - ALLOW_UNAUTHENTICATED=true
+      - AUTO_DELETE_EVERY_N_HOURS=24
+    volumes:
+      - ${APP_DATA_DIR}/data/convertx:/app/data
