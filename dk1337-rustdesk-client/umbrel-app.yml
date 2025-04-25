@@ -2,7 +2,7 @@ manifestVersion: 1
 id: dk1337-rustdesk-client
 name: RustDesk Client
 tagline: A full-featured remote control for self-hosting with minimal configuration
-icon: hhttps://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-rustdesk-client/rustdesk-client.png
+icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-rustdesk-client/rustdesk-client.png
 category: Apps
 version: "1.3.7"
 port: 3044
