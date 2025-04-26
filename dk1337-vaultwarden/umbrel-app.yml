@@ -30,7 +30,7 @@ submission: ""
 repo: "https://github.com/dani-garcia/vaultwarden" # Quellcode-Repository
 support: "https://github.com/dani-garcia/vaultwarden/discussions" # Support-Link
 
-port: 80
+port: 1337
 
 dependencies: [] # Keine Abhängigkeiten von anderen Umbrel Apps
 
