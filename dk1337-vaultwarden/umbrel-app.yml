@@ -1,9 +1,10 @@
 # vaultwarden/umbrel-app.yml
 manifestVersion: 1
-id: "dk1337-vaultwarden" # Eindeutige ID (nur Kleinbuchstaben, Zahlen, Bindestriche)
-name: "Vaultwarden" # Angezeigter Name der App
-tagline: "Self-hosted Password Manager" # Kurze Beschreibung
-description: | # Längere Beschreibung (Markdown unterstützt)
+id: "dk1337-vaultwarden"
+name: "Vaultwarden"
+tagline: "Self-hosted Password Manager"
+category: Apps
+description: | 
   Vaultwarden ist ein alternativer Bitwarden-Server, geschrieben in Rust.
   Er ist kompatibel mit den offiziellen Bitwarden-Clients und bietet eine
   ressourcenschonende Möglichkeit, deinen eigenen Passwort-Manager zu hosten.
