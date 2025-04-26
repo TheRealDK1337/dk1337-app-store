@@ -1,4 +1,3 @@
-# vaultwarden/umbrel-app.yml
 manifestVersion: 1
 id: "dk1337-vaultwarden"
 name: "Vaultwarden"

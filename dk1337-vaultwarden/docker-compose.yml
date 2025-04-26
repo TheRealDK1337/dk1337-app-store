@@ -16,15 +16,6 @@ services:
       # DOMAIN: "https://vaultwarden.example.com" # Deine öffentliche Domain (falls vorhanden)
 
   app_proxy:
-    image: ghcr.io/getumbrel/umbrel-app-proxy:v1.0.0
-    container_name: dk1337-vaultwarden_proxy
-    restart: always
-    volumes:
-      - ./nginx.conf.template:/etc/nginx/templates/nginx.conf.template:ro
     environment:
-      APP_HOST: "dk1337-vaultwarden_server"
-      APP_PORT: "80"
-      PROXY_TARGET_WS_HOST: "dk1337-vaultwarden_server"
-      PROXY_TARGET_WS_PORT: "3012"
-    depends_on:
-      - dk1337-vaultwarden_server
+      APP_HOST: dk1337-vaultwarden_server
+      APP_PORT: 80
