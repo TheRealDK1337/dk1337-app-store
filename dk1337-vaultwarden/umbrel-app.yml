@@ -1,13 +1,42 @@
-id: dk1337-vaultwarden
-name: Vaultwarden
-version: "1.0.0"
-releaseNotes: "Initial Vaultwarden App für Umbrel"
-description: >
-  Vaultwarden ist eine leichtgewichtige Bitwarden-kompatible Passwort-Manager-Lösung.
-developer: Vaultwarden Community
-website: https://github.com/dani-garcia/vaultwarden
-dependencies: []
-repo: https://github.com/dani-garcia/vaultwarden
-support: https://github.com/dani-garcia/vaultwarden/issues
-port: 1337
+# vaultwarden/umbrel-app.yml
+manifestVersion: 1
+id: "dk1337-vaultwarden" # Eindeutige ID (nur Kleinbuchstaben, Zahlen, Bindestriche)
+name: "Vaultwarden" # Angezeigter Name der App
+tagline: "Self-hosted Password Manager" # Kurze Beschreibung
+description: | # Längere Beschreibung (Markdown unterstützt)
+  Vaultwarden ist ein alternativer Bitwarden-Server, geschrieben in Rust.
+  Er ist kompatibel mit den offiziellen Bitwarden-Clients und bietet eine
+  ressourcenschonende Möglichkeit, deinen eigenen Passwort-Manager zu hosten.
+
+  Features:
+  * Vollständige Bitwarden API Kompatibilität
+  * Web-Tresor
+  * Admin-Panel (/admin)
+  * WebSocket-Unterstützung für Echtzeit-Updates
+
+  **Wichtiger Hinweis:** Sichere dein `ADMIN_TOKEN` aus der `docker-compose.yml` gut!
+  Du benötigst es für den Zugriff auf das Admin-Panel unter `https://DEINE_UMBREL_IP/umbrel-app/vaultwarden/admin`.
+  Ändere das Standard-Token **unbedingt** vor der ersten Nutzung.
+
+version: "1.33.7"
+image: ""
 icon: icon.png
+
+developer: "Daniel Garcia"
+website: "https://github.com/dani-garcia/vaultwarden" # Offizielle Vaultwarden Website/Repo
+submitter: "DK1337"
+submission: ""
+
+repo: "https://github.com/dani-garcia/vaultwarden" # Quellcode-Repository
+support: "https://github.com/dani-garcia/vaultwarden/discussions" # Support-Link
+
+port: 80
+
+dependencies: [] # Keine Abhängigkeiten von anderen Umbrel Apps
+
+permissions: # Benötigte Berechtigungen (für Datenpersistenz)
+  - "STORAGE"
+
+releaseNotes: |
+  * Initial release for UmbrelOS.
+  * Uses latest Vaultwarden image.
