@@ -12,7 +12,7 @@ services:
       SIGNUPS_ALLOWED: "true"
       # !!! WICHTIG: Setze hier ein starkes, zufälliges Passwort für den Admin-Bereich !!!
       # Generiere eins z.B. mit: openssl rand -base64 48
-      ADMIN_TOKEN: "asdiofjqwo498fusdniiJSDIKLFHi8otjhqr4oeu8sfzJLK?P§KOP"
+      # ADMIN_TOKEN: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
       # DOMAIN: "https://vaultwarden.example.com" # Deine öffentliche Domain (falls vorhanden)
 
   app_proxy:
