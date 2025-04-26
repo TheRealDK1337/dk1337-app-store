@@ -21,7 +21,7 @@ description: |
 
 version: "1.33.7"
 image: ""
-icon: icon.png
+icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-vaultwarden/icon.png
 
 developer: "Daniel Garcia"
 website: "https://github.com/dani-garcia/vaultwarden" # Offizielle Vaultwarden Website/Repo
