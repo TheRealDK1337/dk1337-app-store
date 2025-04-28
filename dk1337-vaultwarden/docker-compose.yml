@@ -10,10 +10,7 @@ services:
     environment:
       WEBSOCKET_ENABLED: "true"
       SIGNUPS_ALLOWED: "true"
-      # !!! WICHTIG: Setze hier ein starkes, zufälliges Passwort für den Admin-Bereich !!!
-      # Generiere eins z.B. mit: openssl rand -base64 48
-      # ADMIN_TOKEN: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      # DOMAIN: "https://vaultwarden.example.com" # Deine öffentliche Domain (falls vorhanden)
+      # ADMIN_TOKEN: "asdiofjqwo498fusdniiJSDIKLFHi8otjhqr4oeu8sfzJLK?P§KOP"
 
   app_proxy:
     environment:
