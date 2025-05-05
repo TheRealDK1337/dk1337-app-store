@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: dk1337-cloudflared_server
+      APP_PORT: 14333
+
+  server:
+    image: wisdomsky/cloudflared-web:latest
+    restart: always
+    network_mode: host
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/app/config
