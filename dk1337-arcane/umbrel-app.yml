@@ -1,0 +1,17 @@
+id: arcane
+name: dk1337-arcane
+version: "0.2.0"
+license: mit
+description: |
+  Arcane ist eine Weboberfläche zur Verwaltung deiner Docker-Container.
+  Diese Version generiert automatisch einen sicheren Sitzungsschlüssel beim ersten Start.
+developer: ofkm
+website: https://github.com/ofkm/arcane
+submitter: DK1337
+repository: https://github.com/TheRealDK1337/dk1337-app-store
+dependencies: []
+port: 3000
+gallery: []
+deterministicPassword: false
+defaultUsername: ""
+defaultPassword: ""

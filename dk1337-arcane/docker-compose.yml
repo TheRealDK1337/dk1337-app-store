@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  secret-init:
+    image: alpine:latest
+    container_name: arcane-secret-init
+    volumes:
+      - arcane-data:/app/data
+      - ./init/generate-secret.sh:/init.sh:ro
+    entrypoint: ["/bin/sh", "/init.sh"]
+    restart: "no"
+
+  arcane:
+    image: ghcr.io/ofkm/arcane:latest
+    container_name: arcane
+    depends_on:
+      - secret-init
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - arcane-data:/app/data
+    environment:
+      - APP_ENV=production
+      - PUBLIC_SESSION_SECRET_FILE=/app/data/session_secret
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
+
+volumes:
+  arcane-data:
