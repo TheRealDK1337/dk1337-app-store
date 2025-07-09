@@ -3,6 +3,7 @@ id: dk1337-vaultwarden
 category: files
 name: Vaultwarden
 version: "1.34.1"
+icon: "https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-vaultwarden/icon.png"
 tagline: Unofficial Bitwarden® compatible server
 description: >-
   Vaultwarden is an alternative
