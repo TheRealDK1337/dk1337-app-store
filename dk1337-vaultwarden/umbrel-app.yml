@@ -1,42 +1,20 @@
-manifestVersion: 1
-id: "dk1337-vaultwarden"
-name: "Vaultwarden"
-tagline: "Self-hosted Password Manager"
-category: Apps
-description: | 
-  Vaultwarden ist ein alternativer Bitwarden-Server, geschrieben in Rust.
-  Er ist kompatibel mit den offiziellen Bitwarden-Clients und bietet eine
-  ressourcenschonende Möglichkeit, deinen eigenen Passwort-Manager zu hosten.
-
-  Features:
-  * Vollständige Bitwarden API Kompatibilität
-  * Web-Tresor
-  * Admin-Panel (/admin)
-  * WebSocket-Unterstützung für Echtzeit-Updates
-
-  **Wichtiger Hinweis:** Sichere dein `ADMIN_TOKEN` aus der `docker-compose.yml` gut!
-  Du benötigst es für den Zugriff auf das Admin-Panel unter `https://DEINE_UMBREL_IP/umbrel-app/vaultwarden/admin`.
-  Ändere das Standard-Token **unbedingt** vor der ersten Nutzung.
-
-version: "1.33.7"
-image: ""
-icon: https://raw.githubusercontent.com/TheRealDK1337/dk1337-app-store/refs/heads/master/dk1337-vaultwarden/icon.png
-
-developer: "Daniel Garcia"
-website: "https://github.com/dani-garcia/vaultwarden" # Offizielle Vaultwarden Website/Repo
-submitter: "DK1337"
-submission: ""
-
-repo: "https://github.com/dani-garcia/vaultwarden" # Quellcode-Repository
-support: "https://github.com/dani-garcia/vaultwarden/discussions" # Support-Link
-
-port: 1337
-
-dependencies: [] # Keine Abhängigkeiten von anderen Umbrel Apps
-
-permissions: # Benötigte Berechtigungen (für Datenpersistenz)
-  - "STORAGE"
-
-releaseNotes: |
-  * Initial release for UmbrelOS.
-  * Uses latest Vaultwarden image.
+id: vaultwarden
+name: Vaultwarden
+version: "1.30.5"
+releaseNotes: >
+  Vaultwarden ist ein inoffizieller Bitwarden-Server, geschrieben in Rust. Diese Version unterstützt die wichtigsten Funktionen zur Passwortverwaltung in einer privaten Umgebung.
+tagline: Selbst gehosteter Passwortmanager (Bitwarden-kompatibel)
+description: >
+  Vaultwarden ist eine leichtgewichtige, Bitwarden-kompatible Server-Alternative. Ideal für Selbsthoster, die ihre Passwortdatenbank lokal oder in ihrer privaten Cloud verwalten möchten.
+developer: Vaultwarden Community
+website: https://github.com/dani-garcia/vaultwarden
+repo: https://github.com/dani-garcia/vaultwarden
+support: https://github.com/dani-garcia/vaultwarden/issues
+port: 8222
+gallery:
+  - https://raw.githubusercontent.com/dani-garcia/vaultwarden/main/resources/vaultwarden-screenshot.png
+path: /vaultwarden
+defaultUsername: ""
+defaultPassword: ""
+deterministicPassword: false
+dockerComposeFile: docker-compose.yml
