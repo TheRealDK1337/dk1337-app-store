@@ -1,15 +1,21 @@
 version: "3.7"
 
 services:
-  vaultwarden:
+  app_proxy:
+    environment:
+      APP_HOST: vaultwarden_server_1
+      APP_PORT: 8089
+      PROXY_AUTH_ADD: "false"
+
+  server:
     image: vaultwarden/server:latest
-    container_name: vaultwarden
-    restart: unless-stopped
+    user: "1000:1000"
+    restart: on-failure
+    stop_grace_period: 1m
     environment:
       WEBSOCKET_ENABLED: "true"
       ADMIN_TOKEN: ${UMBREL_APP_PASSWORD}
-      DOMAIN: http://localhost:8222
     volumes:
-      - ${UMBREL_APP_DATA_DIR}/data:/data
-    ports:
-      - 8222:80
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      ROCKET_PORT: 8089
