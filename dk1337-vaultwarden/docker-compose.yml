@@ -12,10 +12,9 @@ services:
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 1m
-    environment:
-      WEBSOCKET_ENABLED: "true"
-      ADMIN_TOKEN: ${UMBREL_APP_PASSWORD}
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
       ROCKET_PORT: 8089
+      WEBSOCKET_ENABLED: "true"
+      ADMIN_TOKEN: ${UMBREL_APP_PASSWORD}
